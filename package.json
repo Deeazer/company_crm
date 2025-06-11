@@ -1,0 +1,32 @@
+{
+  "name": "cyberbits-crm",
+  "version": "1.2.0",
+  "description": "Cyberbits CRM - современная система управления проектами и документами",
+  "private": true,
+  "workspaces": [
+    "client",
+    "server"
+  ],
+  "scripts": {
+    "start": "concurrently \"npm run server\" \"npm run client\"",
+    "server": "cd server && npm run dev",
+    "client": "cd client && npm start",
+    "install-all": "npm install && cd client && npm install && cd ../server && npm install",
+    "test": "concurrently \"cd client && npm test\" \"cd server && npm test\"",
+    "lint": "concurrently \"cd client && npm run lint\" \"cd server && npm run lint\""
+  },
+  "keywords": [
+    "crm",
+    "project-management",
+    "document-management",
+    "react",
+    "nodejs",
+    "express",
+    "postgresql"
+  ],
+  "author": "Cyberbits Team",
+  "license": "MIT",
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+} 
